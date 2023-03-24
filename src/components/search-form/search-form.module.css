@@ -50,9 +50,24 @@
     line-height: 20px;
 }
 
+/* input[type="date"] {
+    appearance: none;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #424242;
+} */
+
+/* input[type="date"]:before {
+    content: attr(data-placeholder);
+    width: 100%;
+    color: rgba(135, 135, 135, 1);
+} */
+
 ::-webkit-calendar-picker-indicator {
-   background-image: url(../../images/picker.svg);
-   background-size: 18px 18px;
+    background-image: url(../../images/picker.svg);
+    background-size: 18px 18px;
 }
 
 .form__button {

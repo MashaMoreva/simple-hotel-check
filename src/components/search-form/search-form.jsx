@@ -13,19 +13,26 @@ export function SearchForm() {
         days: ''
     })
 
-    let today = new Date().toISOString().slice(0, 10);
+    let today = new Date().toISOString().slice(0, 10).replace(/^(\d+)-(\d+)-(\d+)$/, `$3.$2.$1`);
+
     const handleSearch = (evt) => {
         evt.preventDefault();
         const search = {
+            location: value.location,
             checkIn: value.checkIn,
             days: value.days
         };
-        dispatch(setSearchParameters(search))
+        dispatch(setSearchParameters(search));
+        setValue({
+            location: '',
+            checkIn: '',
+            days: ''
+        });
     }
 
     return (
         <>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSearch}>
                 <fieldset className={styles.form__fieldset}>
                     <label htmlFor="location" className={styles.form__label}> Локация
                         <input required
@@ -43,7 +50,7 @@ export function SearchForm() {
                             type="date"
                             onChange={(evt) => setValue({ ...value, checkIn: evt.target.value })}
                             id="checkIn"
-                            placeholder="Schedule: &#46;"
+                            data-placeholder={today}
                             value={value.checkIn} />
                         <span className={styles.form__error} id="checkIn-error"></span>
                     </label>

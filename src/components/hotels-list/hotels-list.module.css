@@ -1,12 +1,32 @@
 .hotels__list {
-    background-color: rgba(255, 255, 255, 1);;
-    display: grid;
+  background-color: rgba(255, 255, 255, 1);
+  display: grid;
+  height: 529px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 14px;
+}
+
+.hotels__list::-webkit-scrollbar {
+  width: 2px;
+  background-color: #E7E7E7;
+}
+
+.hotels__list::-webkit-scrollbar-thumb {
+  background-color: #41522E;
 }
 
 .hotels__subtitle {
-    margin: 0;
-    color: #424242;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 22px;
+  margin: 0;
+  color: #424242;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.counter {
+  color: #41522E;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
 }

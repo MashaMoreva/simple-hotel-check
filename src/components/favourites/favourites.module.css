@@ -1,0 +1,41 @@
+.favourites {
+  display: grid;
+  background: rgba(255, 255, 255, 1);
+  padding: 32px;
+  border-radius: 16px;
+  gap: 32px;
+}
+
+.favourites__title {
+  margin: 0;
+  color: #424242;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.hotels {
+  display: grid;
+  gap: 16px;
+  height: 288px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 14px;
+}
+
+
+/* .scroll {
+    height: 664px;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+  } */
+
+.hotels::-webkit-scrollbar {
+  width: 2px;
+  background-color: #E7E7E7;
+}
+
+.hotels::-webkit-scrollbar-thumb {
+  background-color: #41522E;
+}
