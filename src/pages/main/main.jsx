@@ -3,6 +3,9 @@ import { Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getHotels } from '../../services/actions/hotels';
 import styles from './main.module.css';
+import { Header } from '../../components/header/header';
+import { SearchForm } from '../../components/search-form/search-form';
+import { HotelsList } from '../../components/hotels-list/hotels-list';
 
 
 
@@ -28,10 +31,13 @@ export function Main() {
     }
 
     return (
-
-        <main className={styles.content}>
-            <p>Masha</p>
-        </main>
+        <>
+            <Header />
+            <div className={styles.default}>
+                <SearchForm />
+                <HotelsList />
+            </div>
+        </>
 
     )
 }

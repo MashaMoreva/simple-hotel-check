@@ -36,7 +36,7 @@ export function Authorization() {
                     <label htmlFor="login" className={styles.form__label}> Логин
                         <input required
                             className={styles.form__input}
-                            type="text"
+                            type="email"
                             onChange={(evt) => setValue({ ...value, email: evt.target.value })}
                             id="login"
                             placeholder="example@example.ru"
