@@ -54,7 +54,7 @@ export function Main() {
             <div className={styles.default}>
                 <div className={styles.left}>
                     <SearchForm />
-                    <Favourites favouritesHotels={favouritesHotels} />
+                    <Favourites />
                 </div>
                 <div className={styles.right}>
                     <SearchInfo />
