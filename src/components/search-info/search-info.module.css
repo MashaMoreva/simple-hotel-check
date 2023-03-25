@@ -1,0 +1,26 @@
+.search_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    gap: 20px;
+}
+
+.text {
+    margin: 0;
+    color: #424242;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.date {
+    margin: 0;
+    color: #41522E;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}

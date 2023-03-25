@@ -1,3 +1,5 @@
+export const options = { day: 'numeric', month: 'long', year: 'numeric' };
+
 export const request = async ( location, checkIn, checkOut ) => {
   const res = await fetch(location, checkIn, checkOut )
   return handleResponse(res)
@@ -12,4 +14,9 @@ const handleResponse = (res) => {
       err.code = res.status;
       return Promise.reject(`Ошибка: ${res.status}`)
     });
+}
+
+export function searchDeleteItem(array, item) {
+  return array.filter((obj) =>
+      obj.hotelId !== item.hotelId);
 }

@@ -15,27 +15,36 @@
 }
 
 .hotels {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   height: 288px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-right: 14px;
 }
-
-
-/* .scroll {
-    height: 664px;
-    overflow: hidden;
-    overflow-y: auto;
-    overflow-x: hidden;
-  } */
 
 .hotels::-webkit-scrollbar {
-  width: 2px;
-  background-color: #E7E7E7;
+  display: none;
 }
 
-.hotels::-webkit-scrollbar-thumb {
-  background-color: #41522E;
+.buttons {
+  display: flex;
+  gap: 8px
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 4px 8px;
+  background: #FFFFFF;
+  border: 1px solid #41522E;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.select {
+  margin-left: 4px;
 }

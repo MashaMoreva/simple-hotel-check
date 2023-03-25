@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import styles from './hotel-card-mini.module.css';
-import { addHotel } from '../../services/actions/favourites';
+import { deleteHotel } from '../../services/actions/favourites';
+import { searchDeleteItem } from '../../utils/utils';
 
 export function HotelCardMini({ hotel }) {
 
@@ -15,8 +16,13 @@ export function HotelCardMini({ hotel }) {
     const dateFormat = new Date(checkIn).toLocaleString('ru', options).replace(/ г\./, '');
 
     const handleFavouritesClick = () => {
-        dispatch(addHotel(hotel))
-    };
+        dispatch(deleteHotel(hotel))
+        const favourites = JSON.parse(localStorage.getItem('favourites'));
+        let newFavourites = searchDeleteItem(favourites, hotel);
+        localStorage.setItem('favourites', JSON.stringify(newFavourites));
+    }
+
+
 
     return (
         <article className={styles.item} >

@@ -1,6 +1,8 @@
 .default {
     display: flex;
     gap: 24px;
+    padding-top: 92px;
+    padding-bottom: 30px;
     padding-left: 14.5%;
     padding-right: 12%;
     background-color: #E5E5E5;
@@ -14,7 +16,22 @@
 
 .right {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 664px;
     border-radius: 16px;
-    padding: 48px 32px;
+    padding: 48px 32px 32px 32px;
     background: rgba(255, 255, 255, 1);
+}
+
+.image {
+    margin-right: 12px;
+    border-radius: 10px;
+    width: 164px;
+    height: 149px;
+}
+
+.image:last-child {
+    margin-right: 0;
 }

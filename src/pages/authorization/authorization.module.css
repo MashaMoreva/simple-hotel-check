@@ -78,3 +78,13 @@
     line-height: 20px;
     cursor: pointer;
 }
+
+.form__button:hover {
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, .2), hsla(0, 0%, 100%, .2)),
+        linear-gradient(104.34deg, #41522e -15.34%, #be8022 145.95%);
+}
+
+.form__button:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
