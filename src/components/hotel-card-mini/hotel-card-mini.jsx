@@ -19,6 +19,7 @@ export function HotelCardMini({ hotel }) {
         dispatch(deleteHotel(hotel))
         const favourites = JSON.parse(localStorage.getItem('favourites'));
         let newFavourites = searchDeleteItem(favourites, hotel);
+        localStorage.removeItem('favourites');
         localStorage.setItem('favourites', JSON.stringify(newFavourites));
     }
 

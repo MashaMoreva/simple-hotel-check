@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getHotels } from '../../services/actions/hotels';
@@ -18,19 +17,18 @@ import five from '../../images/five.jpg';
 import six from '../../images/six.jpg';
 import seven from '../../images/seven.jpg';
 
-
 export function Main() {
 
     const authorization = JSON.parse(localStorage.getItem('authorization'));
     const dispatch = useDispatch();
-    let favouritesHotels = [];
 
-    let localStorageData = localStorage.getItem('favourites');
-    if (localStorageData === null) {
-        favouritesHotels = [];
-    } else {
-        favouritesHotels = JSON.parse(localStorageData);
-    };
+    // let favouritesHotels = [];
+    // let localStorageData = localStorage.getItem('favourites');
+    // if (localStorageData === null) {
+    //     favouritesHotels = [];
+    // } else {
+    //     favouritesHotels = JSON.parse(localStorageData);
+    // };
 
     React.useEffect(() => {
         const today = new Date();
@@ -67,7 +65,7 @@ export function Main() {
                         <img src={six} className={styles.image} alt="" />
                         <img src={seven} className={styles.image} alt="" />
                     </ScrollingCarousel>
-                    <HotelsList favouritesHotels={favouritesHotels} />
+                    <HotelsList />
                 </div>
             </div>
         </>

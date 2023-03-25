@@ -28,3 +28,20 @@ export const filterObjectArray = (arr, filterArr) => (
       )
   )
 );
+
+export const createRightEnding = (number) => {
+  const titles = ["отель", "отеля", "отелей"];
+  const cases = [2, 0, 1, 1, 1, 2];
+  return `${
+    titles[
+      number % 100 > 4 && number % 100 < 20
+        ? 2
+        : cases[number % 10 < 5 ? number % 10 : 5]
+    ]
+  }`;
+};
+
+// function morph(int, array) {
+//   return (array = array || ['товар', 'товара', 'товаров']) 
+//   && array[(int % 100 > 4 && int % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(int % 10 < 5) ? int % 10 : 5]];
+// }

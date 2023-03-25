@@ -7,34 +7,33 @@ import house from '../../images/house.svg';
 import { addHotel, deleteHotel } from '../../services/actions/favourites';
 import { searchDeleteItem } from '../../utils/utils';
 
-export function HotelCard({ hotel, favouritesHotels }) {
+export function HotelCard({ hotel} ) {
 
     const dispatch = useDispatch();
 
-    const [isFavourites, setIsFavourites] = React.useState(false);
+    const { favourites } = useSelector(state => state.favourites);
+    const isFavourites = favourites.some(favourit => favourit.hotelName === hotel.hotelName)
+
+    // const [isFavourites, setIsFavourites] = React.useState(false);
 
     const checkIn = useSelector(state => state.search.checkIn);
     const days = useSelector(state => state.search.days);
 
     const dateFormat = new Date(checkIn).toLocaleString('ru', options).replace(/ г\./, '');
 
-    //     React.useEffect(() => {
-    //         favouritesInHotels.forEach(() => setIsFavourites(true))
-    // }, [favouritesInHotels])
-
-
-
     const handleFavouritesClick = () => {
         if (!isFavourites) {
             dispatch(addHotel(hotel))
-            favouritesHotels.push(hotel)
-            localStorage.setItem('favourites', JSON.stringify(favouritesHotels))
-            setIsFavourites(true);
+            // favouritesHotels.push(hotel)
+            localStorage.removeItem('favourites')
+            localStorage.setItem('favourites', JSON.stringify([...favourites, hotel]))
+            // setIsFavourites(true);
         } else {
             dispatch(deleteHotel(hotel))
-            setIsFavourites(false);
+            // setIsFavourites(false);
             const favourites = JSON.parse(localStorage.getItem('favourites'));
             let newFavourites = searchDeleteItem(favourites, hotel);
+            localStorage.removeItem('favourites')
             localStorage.setItem('favourites', JSON.stringify(newFavourites));
         }
 
@@ -77,3 +76,4 @@ export function HotelCard({ hotel, favouritesHotels }) {
 //     const location = 'Москва';
 //     dispatch(getHotels(location, checkIn, checkOut))
 // }, [dispatch])
+
