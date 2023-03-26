@@ -5,7 +5,7 @@
 .authorization__background {
     height: 100vh;
     background: url('../../images/background.png') no-repeat center / cover;
-    filter: blur(10px);
+    filter: blur(7px);
     opacity: .6;
 }
 

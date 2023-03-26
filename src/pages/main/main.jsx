@@ -16,6 +16,10 @@ import four from '../../images/four.jpg';
 import five from '../../images/five.jpg';
 import six from '../../images/six.jpg';
 import seven from '../../images/seven.jpg';
+import eight from '../../images/eight.jpg';
+import nine from '../../images/nine.jpg';
+import ten from '../../images/ten.jpg';
+import eleven from '../../images/eleven.jpg';
 
 export function Main() {
 
@@ -32,9 +36,9 @@ export function Main() {
 
     React.useEffect(() => {
         const today = new Date();
+        const checkIn = today.toISOString().slice(0, 10);
         const checkOutDate = new Date();
         checkOutDate.setDate(today.getDate() + 1);
-        const checkIn = today.toISOString().slice(0, 10);
         const checkOut = checkOutDate.toISOString().slice(0, 10);
         const location = 'Москва';
         dispatch(getHotels(location, checkIn, checkOut))
@@ -64,6 +68,10 @@ export function Main() {
                         <img src={five} className={styles.image} alt="" />
                         <img src={six} className={styles.image} alt="" />
                         <img src={seven} className={styles.image} alt="" />
+                        <img src={eight} className={styles.image} alt="" />
+                        <img src={nine} className={styles.image} alt="" />
+                        <img src={ten} className={styles.image} alt="" />
+                        <img src={eleven} className={styles.image} alt="" />
                     </ScrollingCarousel>
                     <HotelsList />
                 </div>

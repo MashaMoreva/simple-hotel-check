@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { getHotels } from '../../services/actions/hotels';
 import { setSearchParameters } from '../../services/actions/search';
 import styles from './search-form.module.css';
 
@@ -22,6 +23,10 @@ export function SearchForm() {
             checkIn: value.checkIn,
             days: value.days
         };
+        const checkOutDate = new Date(search.checkIn);
+        checkOutDate.setDate(checkOutDate.getDate() + Number(search.days));
+        const checkOut = checkOutDate.toISOString().slice(0, 10)
+        dispatch(getHotels(value.location, value.checkIn, checkOut));
         dispatch(setSearchParameters(search));
         setValue({
             location: '',
@@ -70,3 +75,7 @@ export function SearchForm() {
         </>
     )
 }
+
+// http://engine.hotellook.com/api/v2/cache.json?location=Москва&currency=rub&checkIn=2023-03-26&checkOut=2023-03-27&limit=10
+// http://engine.hotellook.com/api/v2/cache.json?location=Волгоград&currency=rub&checkIn=2023-11-11&checkOut=2023-11-17&limit=10
+// http://engine.hotellook.com/api/v2/cache.json?location=Сочи&currency=rub&checkIn=2023-11-11&checkOut=2&limit=10

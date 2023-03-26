@@ -95,5 +95,8 @@
     color: #424242;
     font-weight: 400;
     font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     /* line-height: 22px; */
 }

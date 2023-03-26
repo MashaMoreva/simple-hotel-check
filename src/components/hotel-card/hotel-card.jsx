@@ -6,8 +6,10 @@ import { options } from '../../utils/utils';
 import house from '../../images/house.svg';
 import { addHotel, deleteHotel } from '../../services/actions/favourites';
 import { searchDeleteItem } from '../../utils/utils';
+import { createRightEndingDay } from '../../utils/utils';
 
-export function HotelCard({ hotel} ) {
+
+export function HotelCard({ hotel }) {
 
     const dispatch = useDispatch();
 
@@ -46,7 +48,7 @@ export function HotelCard({ hotel} ) {
             </div>
             <div className={styles.first_column}>
                 <h2 className={styles.title}>{hotel.hotelName}</h2>
-                <p className={styles.date}>{dateFormat} - {days} день</p>
+                <p className={styles.date}>{dateFormat} - {days} {createRightEndingDay(days)}</p>
                 <StarRatings
                     rating={hotel.stars}
                     starRatedColor='rgba(205, 188, 30, 1)'

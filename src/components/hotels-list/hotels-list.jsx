@@ -3,7 +3,7 @@ import styles from './hotels-list.module.css';
 import { useSelector } from 'react-redux';
 import { HotelCard } from '../hotel-card/hotel-card';
 // import { filterObjectArray } from '../../utils/utils';
-import { createRightEnding } from '../../utils/utils';
+import { createRightEndingHotel } from '../../utils/utils';
 
 export function HotelsList({ favouritesHotels }) {
 
@@ -23,7 +23,7 @@ export function HotelsList({ favouritesHotels }) {
 
     return (
         <section className={styles.hotels}>
-            <p className={styles.hotels__subtitle}>Добавлено в Избранное: <span className={styles.counter}>{favourites.length}</span> {createRightEnding(favourites.length)}</p>
+            <p className={styles.hotels__subtitle}>Добавлено в Избранное: <span className={styles.counter}>{favourites.length}</span> {createRightEndingHotel(favourites.length)}</p>
             <div className={styles.hotels__list}>
                 {hotels
                     .map((hotel) => (

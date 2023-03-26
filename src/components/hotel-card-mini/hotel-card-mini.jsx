@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import styles from './hotel-card-mini.module.css';
 import { deleteHotel } from '../../services/actions/favourites';
-import { searchDeleteItem } from '../../utils/utils';
+import { searchDeleteItem, createRightEndingDay } from '../../utils/utils';
 
 export function HotelCardMini({ hotel }) {
 
@@ -31,7 +31,7 @@ export function HotelCardMini({ hotel }) {
                 <h2 className={styles.title}>{hotel.hotelName}</h2>
                 <button className={styles.like} onClick={handleFavouritesClick}></button>
             </div>
-            <p className={styles.date}>{dateFormat} - {days} день</p>
+            <p className={styles.date}>{dateFormat} - {days} {createRightEndingDay(days)}</p>
             <div className={styles.last_row}>
                 <StarRatings
                     rating={hotel.stars}
