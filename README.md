@@ -1,7 +1,7 @@
 # Simple Hotel Check
 
 #### Функционал:
-Десктопная версия web-приложение для поиска отелей, которое имеет два экрана:
+Десктопная версия web-приложения для поиска отелей, которое имеет два экрана:
 1. cтраница авторизации 
 2. основная cтраница с такими возможностями как:
     - поиск и просмотр дефолтных данных отеля (название, рейтинг, стоимость) на нужные даты
@@ -21,5 +21,5 @@
 
 #### Ссылки:
 * [Проект на GitHub Pages](https://mashamoreva.github.io/simple-hotel-check/)
-* [Макет в графическом редакторе Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Макет в графическом редакторе Figma](https://www.figma.com/file/PxI4ycD6GMGSpxOZ2NbFBO/React-Test%2FSimple-Hotel-Check-(Copy)?node-id=0%3A1)
 
