@@ -38,8 +38,9 @@
 }
 
 .form__input {
+    font-family: 'Roboto';
     box-sizing: border-box;
-    padding: 15px;
+    padding: 15px 12px 15px 15px;
     margin-top: 7px;
     width: 296px;
     height: 50px;
@@ -50,14 +51,14 @@
     line-height: 20px;
 }
 
-/* input[type="date"] {
+input[type="date"] {
     appearance: none;
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
     color: #424242;
-} */
+}
 
 /* input[type="date"]:before {
     content: attr(data-placeholder);
@@ -67,10 +68,15 @@
 
 ::-webkit-calendar-picker-indicator {
     background-image: url(../../images/picker.svg);
+    padding: 0;
+    margin: 0;
     background-size: 18px 18px;
+    /* background-size: contain; */
+    
 }
 
 .form__button {
+    font-family: 'Roboto';
     border: none;
     padding: 0;
     margin-top: 32px;
@@ -83,6 +89,7 @@
     font-size: 16px;
     line-height: 20px;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .form__button:hover {

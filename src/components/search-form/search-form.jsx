@@ -8,14 +8,15 @@ export function SearchForm() {
 
     const dispatch = useDispatch();
 
+    let today = new Date().toISOString().slice(0, 10).replace(/^(\d+)-(\d+)-(\d+)$/, `$3.$2.$1`);
+
     const [value, setValue] = React.useState({
         location: '',
-        checkIn: '',
+        checkIn: today,
         days: ''
     })
 
-    let today = new Date().toISOString().slice(0, 10).replace(/^(\d+)-(\d+)-(\d+)$/, `$3.$2.$1`);
-
+    
     const handleSearch = (evt) => {
         evt.preventDefault();
         const search = {
@@ -55,7 +56,7 @@ export function SearchForm() {
                             type="date"
                             onChange={(evt) => setValue({ ...value, checkIn: evt.target.value })}
                             id="checkIn"
-                            data-placeholder={today}
+                            data-placeholder={value.checkIn}
                             value={value.checkIn} />
                         <span className={styles.form__error} id="checkIn-error"></span>
                     </label>
