@@ -8,13 +8,7 @@ body {
   margin: 0;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   /* -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  'Oxygen',
-  'Ubuntu',
-  'Cantarell',
-  'Fira Sans',
-  'Droid Sans'; */
+  BlinkMacSystemFont */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
